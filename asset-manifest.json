@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/sb-new-1/static/css/main.be257b5c.css",
+    "main.js": "/sb-new-1/static/js/main.5d9264d3.js",
+    "static/media/sasha.png": "/sb-new-1/static/media/sasha.177c94cec80143aaeb53.png",
+    "static/media/egor.png": "/sb-new-1/static/media/egor.916036b54fbd468010f3.png",
+    "static/media/sasha1.png": "/sb-new-1/static/media/sasha1.a2c2ae51df8709cfab86.png",
+    "static/media/banner.png": "/sb-new-1/static/media/banner.17c5e546770e9bd026ba.png",
+    "static/media/BannerLower.png": "/sb-new-1/static/media/BannerLower.fed0af3fea5cd1e8dfb4.png",
+    "static/media/mk.jpg": "/sb-new-1/static/media/mk.3d6c9a2f953321833a60.jpg",
+    "static/media/angelina.jpg": "/sb-new-1/static/media/angelina.681434b7036776c0422c.jpg",
+    "static/media/Upper-container.png": "/sb-new-1/static/media/Upper-container.8f6ccf59096f3c0fe313.png",
+    "static/media/splice.jpg": "/sb-new-1/static/media/splice.b74226c1d282389ab840.jpg",
+    "static/media/Lower-container.png": "/sb-new-1/static/media/Lower-container.a345e746cfceb7aae7b6.png",
+    "static/media/fiber-splice.jpg": "/sb-new-1/static/media/fiber-splice.bd6b4f497e007e20f38f.jpg",
+    "static/media/school-trouble.jpg": "/sb-new-1/static/media/school-trouble.34f53292dfc9d072656b.jpg",
+    "static/media/zhuravlev.png": "/sb-new-1/static/media/zhuravlev.ef7e207d551837c1fae3.png",
+    "static/media/andreev.png": "/sb-new-1/static/media/andreev.c3f9166dc1c810d9fba4.png",
+    "static/media/sophia.png": "/sb-new-1/static/media/sophia.3ef518a2153fdf98abd6.png",
+    "static/media/WhatsApp_Image_2022-04-29_at_16.43.40.jpeg": "/sb-new-1/static/media/WhatsApp_Image_2022-04-29_at_16.43.40.6f04fe28d9cb64550775.jpeg",
+    "static/media/team_sb.jpg": "/sb-new-1/static/media/team_sb.1704ac49849f96235121.jpg",
+    "static/media/Курсы.jpg": "/sb-new-1/static/media/Курсы.1d5b19a8cc578007d6bd.jpg",
+    "static/media/vladimir.png": "/sb-new-1/static/media/vladimir.7c696d18b6f30cfc2160.png",
+    "static/media/photo_2024-12-19_23-37-10.jpg": "/sb-new-1/static/media/photo_2024-12-19_23-37-10.5497c82fa2946e5b9574.jpg",
+    "static/media/logoktits.png": "/sb-new-1/static/media/logoktits.3d6ba818ebdd5e336428.png",
+    "static/media/logo_site-250.png": "/sb-new-1/static/media/logo_site-250.1a6b4388d23b3874dd43.png",
+    "static/media/logo.svg": "/sb-new-1/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/sb-new-1/index.html",
+    "main.be257b5c.css.map": "/sb-new-1/static/css/main.be257b5c.css.map",
+    "main.5d9264d3.js.map": "/sb-new-1/static/js/main.5d9264d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be257b5c.css",
+    "static/js/main.5d9264d3.js"
+  ]
+}
