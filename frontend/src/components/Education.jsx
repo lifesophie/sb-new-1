@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchCourses } from '../api'; // Импортируем функцию из api.js
 import '../styles/Education.css'; // Подключаем стили
 import { Link } from "react-router-dom";
 
@@ -8,13 +8,13 @@ const Education = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchCourses = async () => {
+        const loadCourses = async () => {
             try {
-                const response = await axios.get('http://localhost:5175/api/courses');
-                if (Array.isArray(response.data)) {
-                    setCourses(response.data.slice(0, 4)); // Получаем первые 4 курса
+                const response = await fetchCourses();
+                if (Array.isArray(response)) {
+                    setCourses(response.slice(0, 4)); // Получаем первые 4 курса
                 } else {
-                    console.error('Data is not an array', response.data);
+                    console.error('Data is not an array', response);
                 }
             } catch (error) {
                 console.error('Error fetching courses:', error);
@@ -22,7 +22,7 @@ const Education = () => {
             }
         };
 
-        fetchCourses();
+        loadCourses();
     }, []);
 
     if (error) {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchTypeCourses } from '../api'; // Импортируем функцию из api.js
 import '../styles/Course.css'; // Подключаем стили
 import { Link } from "react-router-dom";
 
@@ -8,22 +8,23 @@ const Course = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchCourses = async () => {
+        const loadCourses = async () => {
             try {
-                const response = await axios.get('http://localhost:5175/api/type_course');
-                console.log('response.data', response.data); // <--- Проверяем response.data
+                const response = await fetchTypeCourses();
+                console.log('response.data', response); // <--- Проверяем response.data
 
-                if (Array.isArray(response.data)) {
-                    setTypeCourses(response.data);
+                if (Array.isArray(response)) {
+                    setTypeCourses(response);
                 } else {
-                    console.error('Data is not an array', response.data);
+                    console.error('Data is not an array', response);
                 }
             } catch (error) {
                 console.error('Error fetching courses:', error);
+                setError(error.message);
             }
         };
 
-        fetchCourses();
+        loadCourses();
     }, []);
 
     if (error) {

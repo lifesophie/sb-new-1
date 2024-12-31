@@ -1,45 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { fetchType1Courses, fetchCourses } from '../api'; // Импортируем функции из api.js
 import '../styles/CourseList.css';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CourseList() {
     const [type1Courses, setType1Courses] = useState([]);
     const [courses, setCourses] = useState([]);
     const [selectedCourseType, setSelectedCourseType] = useState(null);
-    const { type } = useParams();
 
     useEffect(() => {
-        const fetchType1Courses = async () => {
+        const loadData = async () => {
             try {
-                const response = await axios.get('http://localhost:5175/api/type1_course');
-                setType1Courses(response.data);
+                const type1CoursesData = await fetchType1Courses();
+                setType1Courses(type1CoursesData);
+
+                const coursesData = await fetchCourses();
+                setCourses(coursesData);
             } catch (error) {
-                console.error('Error fetching type1_course:', error);
+                console.error('Error fetching data:', error);
             }
         };
 
-        const fetchCourses = async () => {
-            try {
-                const response = await axios.get('http://localhost:5175/api/courses');
-                setCourses(response.data);
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-            }
-        };
-
-        fetchType1Courses();
-        fetchCourses();
+        loadData();
     }, []);
-
-    useEffect(() => {
-        if (type) {
-            const courseType = type1Courses.find(tc => tc.name.toLowerCase() === type.toLowerCase());
-            if (courseType) {
-                setSelectedCourseType(courseType.id);
-            }
-        }
-    }, [type, type1Courses]);
 
     const handleCourseTypeClick = (courseTypeId) => {
         setSelectedCourseType(courseTypeId);

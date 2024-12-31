@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchCourseById, fetchType1Courses, submitApplication } from '../api'; // Импортируем функции из api.js
 import '../styles/OneCourse.css'; // Подключаем стили
 import { Link, useParams } from "react-router-dom";
 import Modal from 'react-modal';
@@ -19,28 +19,28 @@ const OneCourse = () => {
     });
 
     useEffect(() => {
-        const fetchCourse = async () => {
+        const loadCourse = async () => {
             try {
-                const response = await axios.get(`http://localhost:5175/api/courses/${id}`);
-                console.log('Fetched course:', response.data); // Проверяем данные курса
-                setCourse(response.data);
+                const response = await fetchCourseById(id);
+                console.log('Fetched course:', response); // Проверяем данные курса
+                setCourse(response);
             } catch (error) {
                 console.error('Error fetching course:', error);
             }
         };
 
-        const fetchType1Courses = async () => {
+        const loadType1Courses = async () => {
             try {
-                const response = await axios.get('http://localhost:5175/api/type1_course');
-                console.log('Fetched type1 courses:', response.data); // Проверяем данные типов курсов
-                setType1Courses(response.data);
+                const response = await fetchType1Courses();
+                console.log('Fetched type1 courses:', response); // Проверяем данные типов курсов
+                setType1Courses(response);
             } catch (error) {
                 console.error('Error fetching type1_course:', error);
             }
         };
 
-        fetchCourse();
-        fetchType1Courses();
+        loadCourse();
+        loadType1Courses();
     }, [id]);
 
     const openModal = () => {
@@ -62,7 +62,7 @@ const OneCourse = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5175/api/submit-application', {
+            await submitApplication({
                 ...formData,
                 courseId: id,
                 courseName: course.name
