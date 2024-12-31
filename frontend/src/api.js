@@ -2,22 +2,32 @@ import axios from 'axios';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-export const fetchType1Courses = async () => {
-    try {
-        const response = await axios.get(`${apiUrl}/api/type1_course`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching type1_course:', error);
-        throw error;
-    }
-};
-
 export const fetchCourses = async () => {
     try {
         const response = await axios.get(`${apiUrl}/api/courses`);
         return response.data;
     } catch (error) {
         console.error('Error fetching courses:', error);
+        throw error;
+    }
+};
+
+export const fetchTypeCourses = async () => {
+    try {
+        const response = await axios.get(`${apiUrl}/api/type_course`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching type_course:', error);
+        throw error;
+    }
+};
+
+export const fetchType1Courses = async () => {
+    try {
+        const response = await axios.get(`${apiUrl}/api/type1_course`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching type1_course:', error);
         throw error;
     }
 };

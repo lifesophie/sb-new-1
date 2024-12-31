@@ -8,7 +8,7 @@ const Course = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const loadCourses = async () => {
+        const fetchCourses = async () => {
             try {
                 const response = await fetchTypeCourses();
                 console.log('response.data', response); // <--- Проверяем response.data
@@ -24,7 +24,7 @@ const Course = () => {
             }
         };
 
-        loadCourses();
+        fetchCourses();
     }, []);
 
     if (error) {
